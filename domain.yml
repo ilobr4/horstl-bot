@@ -1,0 +1,162 @@
+# Ilona Breidt (Matrikelnr.: 1345340) und Antonia Macht (Matrikelnr.:1265868)
+version: "3.1"
+
+# mögliche Themen
+# auf die Reihenfolge von nlu.yml achten!
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - thanks
+  - confused
+  - bot_challenge
+  - basic
+  - login
+  - logout
+  - modules
+  - modules_enroll
+  - modules_signoff
+  - timetable
+  - export_timetable
+  - import_timetable
+  - exams
+  - exams_enroll
+  - exams_signoff
+  - achievements
+  - payments
+  - receipts
+  - contact
+  - application
+  - cafeteria
+  - e_learning
+  - library
+  - opening_hours
+  - student_id
+  - thesis
+  - sports
+
+# Antwortmöglichkeiten
+responses:
+  utter_greet:
+  - text: "Hallo! Wie kann ich dir helfen?"
+
+  utter_did_that_help:
+  - text: "Hat dir das weitergeholfen?"
+  - text: "Hat dir das geholfen?"
+  - text: "Konnte ich dir helfen?"
+
+  utter_happy:
+  - text: "Sehr gut! Ich freue mich, dass ich dir helfen konnte."
+
+  utter_goodbye:
+  - text: "Tschüss! Ich wünsche dir einen schönen Tag!"
+
+  utter_thanks:
+  - text: "Gern geschehen! Wenn du weitere Fragen hast oder weitere Hilfe benötigst, kannst du mich gerne fragen!"
+
+  utter_repeat:
+  - text: "Ich verstehe dich nicht. Formuliere deine Frage bitte anders."
+
+  utter_iamabot:
+  - text: "Ich bin kein Mensch."
+  - text: "Ich bin der Horstl-Bot, kein Mensch!"
+  - text: "Ich bin nur ein Bot."
+  
+  # Allgemeines
+  utter_basic:
+  - text: "Horstl ist das Hochschul-Organisations-System der Hochschule Fulda. Hier bekommst du eine Übersicht über deine Module, deinen Stundenplan, deine Noten und hast Zugriff auf deine Bescheinigungen und vieles mehr."
+
+  utter_login:
+  - text: "Du kannst dich in Horstl einloggen indem du auf der Startseite unter 'Benutzerkennung' deine fd-Nummer und unter 'Passwort' dein Passwort in die dafür vorgesehenen Felder eingibst und dann auf 'anmelden' klickst."
+
+  utter_logout:
+  - text: "Wenn du dich wieder abmelden willst, dann kannst du auf das Symbol (Rechteck mit einem Pfeil) oben rechts in der Ecke klicken."
+
+  # Module
+  utter_modules:
+  - text: "Du findest eine Übersicht von allen Modulen, die du belegt hast, unter 'Mein Studium' -> 'Belegungen'."
+
+  utter_modules_enroll:
+  - text: "Alle Module findest du unter 'Veranstaltungen' -> 'Vorlesungsverzeichnis anzeigen'. Wähle nun oben das aktuelle Semester aus. Hier kannst du die Module belegen, die du möchtest. Du musst dafür einfach auf den Button 'Belegen' klicken, der sich neben dem gewünschten Modul befindet. Du kannst Module aber nur belegen, wenn du dich im derzeitigen Anmeldezeitraum befindest. Informiere dich über den Anmeldezeitraum auf der Homepage der Hochschule Fulda oder auf moodle."
+
+  utter_modules_signoff:
+  - text: "Alle Module findest du unter 'Veranstaltungen' -> 'Vorlesungsverzeichnis anzeigen'. Wähle nun oben das aktuelle Semester aus. Hier kannst du dich von den Modulen abmelden, die du belegt hast. Du musst dafür einfach auf den Button 'Abmelden' klicken, der sich neben dem gewünschten Modul befindet."
+
+  utter_modules_video:
+  - text: "Auf Youtube gibt es eine Anleitung zur Belegung von Veranstaltungen in horstl auf dem Kanal 'Hochschule Fulda'. Hier ist ein Link: https://www.youtube.com/watch?v=a1DNqW8rY94&list=PL7Z4gnUTcXlglLUODMtgFaoa2xzmSgaER&index=1"
+
+  # Stundenplan
+  utter_timetable:
+  - text: "Auf der Startseite findest du oben links das Menü. Unter dem Punkt 'Mein Studium' findest du den Stundenplan."
+
+  utter_export_timetable:
+  - text: "Auf der Seite deines Stundenplans auf horstl kannst du deinen Stundenplan als pdf exportieren. Du kannst aber auch die Daten für iCalendar (ics) exportieren. Beide Optionen findest du direkt über deinem Stundenplan."
+
+  utter_import_timetable:
+  - text: "Bei den meisten Kalendern kannst du die Daten deines Stundenplans einfach über 'Einstellungen' > 'Importieren' auswählen. So kannst du deinen Stundenplan deinem Kalender hinzufügen. Falls es Probleme gibt informiere dich am besten über deinen Kalender und ob ein Import dort möglich ist."
+
+  # Prüfungen
+  utter_exams:
+  - text: "Du findest alle Prüfungen, für die du dich angemeldet hast, und alle dazugehörigen Informationen in horstl. Die Prüfungen sind unter 'Mein Studium' -> 'Belegungen'."
+
+  utter_exams_enroll:
+  - text: "Du findest eine Übersicht von allen Prüfungen unter 'Mein Studium' -> 'Studienplaner mit Modulplan'. Die Prüfungen sind mit einem Stern gekennzeichnet. Achte auf die Einstellung des Studiensemesters. Solange der Prüfungsanmeldezeitraum läuft, kannst du dich für die Prüfungen anmelden. Dafür klickst du einfach auf den Button 'Anmelden'. Die Prüfungsan- und abmeldezeiträume können je nach Semester unterschiedlich sein. Informationen dazu findest du in dem Kurs 'Prüfungen' in moodle."
+
+  utter_exams_signoff:
+  - text: "Du findest eine Übersicht von allen Prüfungen unter 'Mein Studium' -> 'Studienplaner mit Modulplan'. Die Prüfungen sind mit einem Stern gekennzeichnet. Achte auf die Einstellung des Studiensemesters. Solange der Prüfungsabmeldezeitraum läuft, kannst du dich von den Prüfungen ab- und ummelden. Dafür klickst du einfach auf den Button 'Ab-/Ummelden'. Die Prüfungsan- und abmeldezeiträume können je nach Semester unterschiedlich sein. Die Rücktrittfristen werden individuell von den Fachbereichen festgelegt. Informationen dazu findest du in dem Kurs 'Prüfungen' in moodle."
+
+  utter_exams_video:
+  - text: "Auf Youtube gibt es eine Anleitung zur Prüfungsan- und abmeldung in horstl auf dem Kanal 'Hochschule Fulda'. Hier ist ein Link: https://www.youtube.com/watch?v=5BHOXTTdVSw&list=PL7Z4gnUTcXlj-xmiWwqamcR1vDf6ucWvU&index=2"
+
+  # Leistungen
+  utter_achievements:
+  - text: "Deine Noten und Credits findest du unter 'Mein Studium' -> 'Leistungen'. Hier werden deine bewerteten Leistungen angezeigt."
+
+  # Studiengebühren
+  utter_payments:
+  - text: "Deine Zahlungen findest du unter 'Mein Studium' -> 'Studienservice'. Unter dem Menüpunkt 'Zahlungen' findest du eine Übersicht deiner bisher geleisteten Zahlungen und den Zahlungen, die noch ausstehen. Eine Zahlung ist eingegangen, wenn neben ihr ein grüner Kreis mit einem Haken zu sehen ist. Hier stehen auch Informationen wie der Zeitraum, der Betrag und das Fälligkeitsdatum."
+
+  # Bescheide
+  utter_receipts:
+  - text: "Deine Bescheide findest du unter 'Mein Studium' -> 'Studienservice'. Unter dem Menüpunkt 'Bescheide/Bescheinigungen' sind alle Belege. Unter 'Allgemein' findest du deine Studienbescheinigungen. Diese kannst du als pdf speichern und ausdrucken."
+
+  # Kontakt
+  utter_contact:
+  - text: "Auf der Startseite findest du den Quicklink 'Studienbüro'. Dort findest du ein Formular, durch welches du das Studienbüro direkt kontaktieren kannst, sowie alle weiteren wichtigen Informationen zur Kontaktaufnahme. "
+
+  # Bewerbung
+  utter_application:
+  - text: "Auf der Startseite gibt es mehrere Möglichkeiten um zur Bewerbung zu gelangen. Du kannst auf den Quicklink 'INFO ZUR BEWERBUNG' klicken, wo du alle wichtigen Informationen zum Thema Bewerbung, inklusive Videoanleitung, findest. Für eine kompaktere Zusammenfassung klickst du auf das Portal für Bewerber*innen, oder auf den Link 'Studienbewerbung' in der oberen Leiste."
+  
+  # Mensa
+  utter_cafeteria:
+  - text: "Auf der Startseite findest du den Quicklink 'MENSA', welcher dich auf die Seite des Studierendenwerks Giessen führt. Du kannst entweder dort die Öffnungszeiten sowie einen aktuellen Speiseplan unserer Mensa finden, oder unter folgendem Link: https://www.stwgi.de/essen-trinken/fulda/mensa-hochschule-fulda/. Außerdem gibt es auf dem Campus einen Foodtruck, alle Informationen dazu findest du hier: https://www.stwgi.de/essen-trinken/fulda/5-days-a-week-campus-streetfood.html"
+
+  # E-Learning 
+  utter_e_learning:
+  - text: "Auf der Startseite findest du den Quicklink 'E-LEARNING', welcher dich auf die hochschulweite elektronische Lernplattform weiterleitet. Dort gibst du deine fd-Nummer und dein Passwort ein. Anschließend kannst du deinen Fachbereich auswählen und wirst somit zu dem entsprechenden separaten E-Learning-System weitergeleitet."
+
+  # Bibliothek 
+  utter_library:
+  - text: "Auf der horstl-Startseite findest du den Quicklink 'BIBLIOTHEK', welcher dich weiter auf die Startseite der Hochschul- und Landesbibliothek Fulda (hlb) führt, oder du folgst direkt diesem Link: https://www.hs-fulda.de/hlb/.  Dort kannst du nach Literatur suchen, findest die aktuellen Öffnungszeiten der beiden Standorte 'Campus' und 'Heinrich-von-Bibra-Platz' der hlb, eine Anleitung zur Raumreservierung, Informationen zu den Beständen und vieles mehr."
+
+  # Öffnungszeiten 
+  utter_opening_hours:
+  - text: "Auf der Startseite findest du den Quicklink 'ÖFFNUNGSZEITEN'. Dort findest du eine Übersicht aller aktuellen Öffnungszeiten der einzelnen Gebäude, jeweils während der Vorlesungszeit (inklusive Prüfungsphase), sowie der vorlesungsfreien Zeit."
+
+  # Ausweis 
+  utter_student_id:
+  - text: "Nachdem du dich eingeloggt hast, gehst du auf das Menü oben links. Unter dem Punkt 'Mein Studium' -> 'Foto für Ausweis hochladen' kannst du einmalig ein Foto für deinen Studierendenausweis hochladen. Dieser wird dir im Anschluss per Post zugeschickt."
+
+  # Bachelor-/Masterarbeit 
+  utter_thesis:
+  - text: "Nachdem du dich in horstl eingeloggt hast, kannst du auf der Startseite auf den Quicklink 'DIG. THESEN' klicken. Dieser führt dich zur digitalen Einreichung von Bachelor- oder Masterarbeiten, wo du deine Arbeit hochladen kannst, sowie alle weiteren wichtigen Informationen diesbezüglich findest. "
+
+  # Sport 
+  utter_sports:
+  - text: "Auf der Startseite findest du den Quicklink 'HOCHSCHULSPORT'. Dort findest du das komplette Sportprogramm der Hochschule, alle Sport-Events, aktuelle Informationen und vieles mehr."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

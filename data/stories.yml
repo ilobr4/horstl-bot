@@ -1,0 +1,240 @@
+# Ilona Breidt (Matrikelnr.: 1345340) und Antonia Macht (Matrikelnr.:1265868)
+version: "3.1"
+
+stories:
+
+# Allgemeines
+- story: basic path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: basic
+  - action: utter_basic
+
+- story: login path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: login
+  - action: utter_login
+
+- story: logout path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: logout
+  - action: utter_logout
+
+# Module
+- story: modules path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: modules
+  - action: utter_modules
+
+- story: modules_enroll path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: modules_enroll
+  - action: utter_modules_enroll
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: modules_enroll path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: modules_enroll
+  - action: utter_modules_enroll
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_modules_video
+
+- story: modules_signoff path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: modules_signoff
+  - action: utter_modules_signoff
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: modules_signoff path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: modules_signoff
+  - action: utter_modules_signoff
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_modules_video
+
+# Stundenplan
+- story: timetable path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: timetable
+  - action: utter_timetable
+
+- story: export_timetable path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: export_timetable
+  - action: utter_export_timetable
+
+- story: import_timetable path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: import_timetable
+  - action: utter_import_timetable
+
+# Prüfungen
+- story: exams path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: exams
+  - action: utter_exams
+
+- story: exams_enroll path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: exams_enroll
+  - action: utter_exams_enroll
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: exams_enroll path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: exams_enroll
+  - action: utter_exams_enroll
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_exams_video
+
+- story: exams_signoff path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: exams_signoff
+  - action: utter_exams_signoff
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: exams_signoff path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: exams_signoff
+  - action: utter_exams_signoff
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_exams_video
+
+# Leistungen
+- story: achievements path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: achievements
+  - action: utter_achievements
+
+# Studiengebühren
+- story: payments path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: payments
+  - action: utter_payments
+
+# Bescheide
+- story: receipts path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: receipts
+  - action: utter_receipts
+
+# Kontakt
+- story: contact path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: contact
+  - action: utter_contact
+
+# Bewerbung
+- story: application path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: application
+  - action: utter_application
+
+# Mensa
+- story: cafeteria path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: cafeteria 
+  - action: utter_cafeteria 
+
+# E-Learning
+- story: e_learning path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: e_learning
+  - action: utter_e_learning
+
+# Bibliothek
+- story: library path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: library
+  - action: utter_library
+
+# Öffnungszeiten 
+- story: opening_hours path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: opening_hours
+  - action: utter_opening_hours
+
+# Ausweis
+- story: student_id path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: student_id
+  - action: utter_student_id
+
+# Bachelor-/Masterarbeit 
+- story: thesis path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: thesis
+  - action: utter_thesis
+
+# Sport
+- story: sports path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: sports
+  - action: utter_sports

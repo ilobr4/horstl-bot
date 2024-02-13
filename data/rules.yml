@@ -1,0 +1,26 @@
+version: "3.1"
+
+#policies:
+#- name: RulePolicy
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Say repeat anytime the user is confused
+  steps:
+  - intent: confused
+  - action: utter_repeat
+
+- rule: Say thanks anytime the user thanks you
+  steps:
+  - intent: thanks
+  - action: utter_thanks

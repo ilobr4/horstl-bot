@@ -1,0 +1,616 @@
+# Ilona Breidt (Matrikelnr.: 1345340) und Antonia Macht (Matrikelnr.:1265868)
+version: "3.1"
+
+# mögliche Themen + Eingaben der User
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hallo
+    - guten Morgen
+    - guten Mittag
+    - moin
+    - yo
+    - was geht?
+    - guten Tag
+    - guten Abend
+    - guten Nachmittag
+    - ist da jemand?
+    - hallo, ich brauche Hilfe
+    - kannst du mir helfen?
+    - ich habe eine Frage 
+    - grüß dich 
+    - servus
+    - ich brauche Unterstützung
+    - ich bräuchte mal Hilfe
+    - kannst du mir etwas erklären?
+    - ich habe ein Problem 
+    - kannst du mir weiterhelfen?
+    - ich suche informationen
+    - ich habe ein Anliegen
+
+- intent: goodbye
+  examples: |
+    - tschüss
+    - ciao
+    - tschau
+    - auf Wiedersehen
+    - goodbye
+    - bye
+    - schönen Tag noch
+    - bis bald
+    - bye bye
+    - tschüssi
+    - bis später 
+    - bis zum nächsten Mal 
+    - mach's gut
+    - bis dann
+    - schönen Abend noch
+    - das wars
+    - das war alles
+    - ich habe keine Fragen mehr
+    - ich brauche keine Hilfe mehr
+
+- intent: affirm
+  examples: |
+    - ja
+    - yes
+    - genau
+    - positiv
+    - natürlich
+    - auf jeden Fall
+    - alles klar!
+    - richtig
+    - das stimmt
+    - korrekt
+    - na klar
+    - klar
+    - sicher
+    - aber sowas von
+    - ich glaube schon
+    - ich denke ja
+    - ok
+    - okay
+    - okay, cool 
+    - oki
+    - super
+
+- intent: deny
+  examples: |
+    - no
+    - nein
+    - ne
+    - ich glaube nicht
+    - ich denke nicht
+    - ich mag das nicht
+    - niemals
+    - auf gar keinen Fall
+    - auf keinen Fall
+    - nicht wirklich
+    - so nicht
+    - so geht das nicht
+
+- intent: thanks
+  examples: |
+    - danke
+    - dankeschön
+    - danke schön
+    - vielen Dank
+    - thanks
+    - thank you
+    - thx
+    - merci
+    - besten Dank
+    - danke vielmals
+    - herzlichen Dank
+    - ich bedanke mich
+    - ich danke Ihnen
+    - ich danke Dir
+    - haben Sie Dank
+
+- intent: confused
+  examples: |
+    - hä
+    - was
+    - wie
+    - wie bitte
+    - verstehe ich nicht
+    - was soll ich machen?
+    - wie soll das gehen?
+    - geht nicht
+    - was meinst du?
+    - und wie?
+    - wie soll das gehen?
+    - keine Ahnung
+    - kein Plan
+
+- intent: bot_challenge
+  examples: |
+    - Bist du ein Bot?
+    - Bist du ein Mensch?
+    - Bist du ein Computer?
+    - Bist du ein Roboter?
+    - Spreche ich mit einem Bot?
+    - Spreche ich mit einem Menschen?
+    - Wer bist du?
+
+# Allgemeines
+- intent: basic
+  examples: |
+    - was ist horstl überhaupt?
+    - was ist horstl?
+    - wofür brauche ich horstl?
+    - warum brauche ich horstl?
+    - was kann ich alles mit horstl machen? 
+    - für was nutzt man horstl?
+    - Was genau ist Horstl?
+    - Könntest du mir mehr über Horstl erklären?
+    - Kannst du mir sagen, wozu Horstl gut ist?
+    - Warum sollte ich Horstl verwenden?
+    - Was sind die Anwendungsmöglichkeiten von Horstl?
+    - Welche Funktionen bietet Horstl?
+    - Wie kann Horstl mir nützen?
+    - Wofür ist Horstl gedacht?
+
+- intent: login
+  examples: |
+    - wie logge ich mich in Horstl ein?
+    - wie melde ich mich an?
+    - was brauche ich, um mich in Horstl anzumelden?
+    - welche Daten benötige ich um mich einzuloggen? 
+    - wo kann ich mich einloggen?
+    - Welche Schritte sind notwendig, um mich in Horstl einzuloggen?
+    - Kannst du mir erklären, wie ich mich in Horstl einlogge?
+    - Welche Informationen sind erforderlich, um mich bei Horstl anzumelden?
+    - Wie komme ich zu meinem Horstl-Konto?
+    - Welche Angaben werden für den Login benötigt?
+
+- intent: logout
+  examples: |
+    - wie melde ich mich von Horstl ab?
+    - wo melde ich mich ab? 
+    - wie kann ich mich wieder ausloggen?
+    - wie kann ich mich von horstl abmelden?
+    - wie logge ich mich aus?
+    - Wo finde ich die Option, um mich von Horstl abzumelden?
+    - Wo befindet sich die Abmelden-Funktion in Horstl?
+    - Welche Schritte sind notwendig, um mich sicher von Horstl auszuloggen?
+
+# Module
+- intent: modules
+  examples: |
+    - wo sehe ich die Modulübersicht?
+    - wo kann ich sehen für welche Module ich angemeldet bin?
+    - wo sind meine Module?
+    - wo finde ich eine Übersicht meiner Module?
+    - wo sind alle Module in denen ich eingeschrieben bin?
+    - wo sehe ich die Übersicht meiner Veranstaltungen?
+    - wo kann ich sehen für welche Veranstaltungen ich angemeldet bin?
+    - wo sind meine Veranstaltungen?
+    - wo finde ich eine Übersicht meiner Veranstaltungen?
+    - wo sind alle Veranstaltungen in denen ich eingeschrieben bin?
+
+- intent: modules_enroll
+  examples: |
+    - wie schreibe ich mich in ein Modul ein?
+    - wie kann ich ein Modul belegen?
+    - wie kann ich eine Veranstaltung belegen?
+    - wie kann ich Module belegen?
+    - Wie kann ich mich für Module anmelden?
+    - wo schreibe ich mich in ein Modul ein?
+    - wann kann ich mich in die Module einschreiben?
+    - wie belege ich ein Modul?
+    - wie belege ich eine Veranstaltung?
+    - wie melde ich mich für ein Modul an?
+    - Kannst du mir den Prozess der Modulwahl erklären?
+    - Welche Schritte sind erforderlich, um meine Module zu wählen?
+
+- intent: modules_signoff
+  examples: |
+    - wie melde ich mich von einem Modul ab?
+    - wie melde ich mich von Modulen ab?
+    - wo kann ich mich aus einem Modul ausschreiben?
+    - kann ich mich wieder von einem Modul abmelden?
+    - wann kann ich mich von Modulen wieder abmelden?
+    - wie trage ich mich aus einer Veranstaltung wieder aus?
+    - wie melde ich mich von einer Veranstaltung ab?
+
+# Stundenplan
+- intent: timetable
+  examples: |
+    - wie kann ich meinen stundenplan einsehen?
+    - wo finde ich meinen stundenplan?
+    - wie greife ich auf meinen stundenplan zu?
+    - wo ist mein stundenplan?
+    - wo kann ich meinen Stundenplan finden?
+    - wo kann ich meinen Stundenplan sehen?
+
+- intent: export_timetable
+  examples: |
+    - kann ich den Stundenplan direkt exportieren? 
+    - wie kann ich meinen Stundenplan exportieren?
+    - wie komme ich an die Daten aus meinem Stundenplan?
+    - kann ich meinen Stundenplan herunterladen?
+
+- intent: import_timetable
+  examples: |
+    - wie kann ich den Stundenplan in meinen Kalender übertragen?
+    - wie kann ich meinen Stundenplan importieren?
+    - wie kann ich den Stundenplan in einen anderen Kalender hinzufügen?
+    - Welche Schritte sind erforderlich, um meinen Stundenplan in meinen Kalender zu integrieren?
+    - Kannst du mir erklären, wie ich meinen Stundenplan in meinen Kalender importieren kann?
+    - Wie übertrage ich meine Stundenplantermine in meinen Kalender?
+    - Gibt es eine Möglichkeit, meinen Stundenplan in einen Kalender zu integrieren?
+    - Wie kann ich meine Stundenplantermine in einen anderen Kalender hinzufügen?
+    - Kann ich meinen Stundenplan automatisch in meinen Kalender eintragen lassen?
+
+# Prüfungen
+- intent: exams
+  examples: |
+    - wie kann ich meine Prüfungen finden?
+    - wo sind meine Prüfungen?
+    - wo finde ich eine Übersicht von meinen Prüfungen?
+    - wo sind die Prüfungen, für die ich mich angemeldet habe?
+    - Wie kann ich meine anstehenden Prüfungen finden?
+    - Wo erhalte ich eine Übersicht meiner geplanten Prüfungen?
+    - Wo finde ich Informationen zu den Prüfungen, für die ich mich angemeldet habe?
+    - Wie kann ich meine Prüfungstermine einsehen?
+    - Wo sind die Details zu meinen bevorstehenden Prüfungen?
+    - Kannst du mir zeigen, wo ich eine Liste meiner Prüfungen finde?
+    - Wo erhalte ich Informationen zu meinen Prüfungsterminen und -orten?
+    - Wo finde ich meine Prüfungstermine und -zeiten?
+
+- intent: exams_enroll
+  examples: |
+    - wie kann ich mich für eine Prüfung anmelden?
+    - wie melde ich mich für Prüfungen an?
+    - wo melde ich mich für Prüfungen an?
+    - wo kann ich mich für Klausuren anmelden?
+    - wie melde ich mich für eine Prüfung an? 
+    - wo kann ich mich für die Prüfungen anmelden?
+    - wann kann ich mich für die Prüfungen anmelden?
+    - was brauche ich um mich für eine Prüfung anzumelden?
+    - was sind die schritte zur Prüfungsanmeldung?
+    - wie registriere ich mich für die Prüfungen?
+
+- intent: exams_signoff
+  examples: |
+    - wie kann ich mich von einer Prüfung abmelden?
+    - wie melde ich mich von Prüfungen ab?
+    - wo melde ich mich von Prüfungen ab?
+    - wo kann ich mich von Klausuren abmelden?
+    - wie melde ich mich von einer Prüfung ab? 
+    - wo kann ich mich von den Prüfungen abmelden?
+    - wann kann ich mich von den Prüfungen abmelden?
+    - was brauche ich um mich von einer Prüfung abzumelden?
+    - kann ich mich von einer Prüfung abmelden?
+    - bis wann kann ich mich wieder von einer Prüfung abmelden?
+    - ist es möglich sich von einer Prüfung wieder abzumelden?
+    - kann ich Prüfungen ummelden?
+    - kann ich mich ummelden wenn ich mich zu einer falschen Prüfung angemeldet habe? 
+
+# Leistungen
+- intent: achievements
+  examples: |
+    - wo kann ich meinen Notenspiegel einsehen? 
+    - wo sehe ich alle meine Noten?
+    - wie finde ich meinen Notenspiegel?
+    - wie kann ich meine Noten einsehen?
+    - wo finde ich meine aktuellen Studienleistungen?
+    - kannst du mir erklären, wie ich meine Noten überprüfen kann?
+    - wie finde ich meine Noten?
+    - wie finde ich eine Note für ein bestimmtes Modul?
+    - wie finde ich einzelne Noten?
+    - wo kann ich meine Credits einsehen?
+    - wo stehen meine Credits?
+
+# Studiengebühren
+- intent: payments
+  examples: |
+    - wie hoch sind die Studiengebühren?
+    - wo finde ich Informationen zu den Studiengebühren?
+    - wo kann ich die Studiengebühren bezahlen?
+    - wie zahle ich meine Studiengebühren?
+    - bis wann muss ich die Gebühren für das nächste Semester zahlen?
+    - wo sehe ich ob ich meine Studiengebühren gezahlt habe?
+    - wo sehe ich ob ich meine Studiengebühren bezahlt habe?
+    - wie hoch ist der Semesterbeitrag?
+    - wo kann ich den Semesterbeitrag bezahlen?
+    - wie zahle ich meinen Semesterbeitrag?
+    - bis wann muss ich den Beitrag für das nächste Semester zahlen?
+    - wo sehe ich ob ich meinen Semesterbeitrag gezahlt habe?
+    - wo sehe ich ob ich meinen Semesterbeitrag bezahlt habe?
+    - Kannst du mir etwas über die Kosten des Studiums an der Hochschule Fulda sagen?
+    
+# Bescheide
+- intent: receipts
+  examples: |
+    - wie finde ich meine Zahlungsbelege für die Studiengebühren?
+    - wo finde ich meine Belege?
+    - wo finde ich meine Bescheide?
+    - wo sind meine Bescheide?
+    - wo sind meine Bescheinigungen?
+    - wie kann ich eine Studienbescheinigung erstellen lassen?
+    - kann ich Studienbescheinigungen für vergangene Semester erstellen?
+    - wo kann ich meine Studienbescheinigungen herunterladen?
+    - kann ich die Studienbescheinigungen downloaden?
+    - kann ich Bescheinigungen für vergangene Semester noch herunterladen?  
+    - wo finde ich meine Studienbescheinigung?
+    - wo ist meine Studienbescheinigung?
+    - wie kann ich meine Studienbescheinigung finden?
+
+# Kontakt 
+- intent: contact
+  examples: |
+    - Wie kann ich Kontakt mit der Hochschule aufnehmen?
+    - Gibt es einen Kontakt bei dem ich mich bei Problemen melden kann?
+    - Wo kann ich mich bei Problemen melden?
+    - Wie erreiche ich jemanden an der Hochschule?
+    - wie kontaktiere ich das Studienbüro?
+    - Wie kann ich die Hochschule kontaktieren?
+    - Gibt es eine Möglichkeit, bei Problemen oder Fragen mit der Hochschule in Kontakt zu treten?
+    - Wo finde ich Kontaktdaten, um mich bei Schwierigkeiten zu melden?
+    - Wie erreiche ich Ansprechpartner an der Hochschule?
+    - Wo finde ich die Kontaktinformationen für das Studienbüro?
+    - Kannst du mir sagen, wie ich das Studienbüro telefonisch oder per E-Mail erreichen kann?
+
+# Bewerbung
+- intent: application 
+  examples: |
+    - Wie kann ich mich für einen Studiengang bewerben?
+    - Was sind die Schritte zur Bewerbung?
+    - Gib mir Informationen zur Studienplatzbewerbung.
+    - wo kann ich mich bewerben?
+    - wo kann ich mich immatrikulieren?
+    - wie läuft die Immatrikulation ab?
+
+# Mensa 
+- intent: cafeteria
+  examples: |
+    - Hat die Hochschule eine Mensa?
+    - Wo finde ich Informationen zur Mensa?
+    - Gibt es eine Mensa?
+    - Was sind die Öffnungszeiten der Mensa?
+    - Hat die Mensa immer auf?
+    - Wann ist die Mensa geöffnet?
+    - Wann hat die Mensa auf?
+    - Gibt es eine Cafeteria?
+    - Wann ist die Cafeteria offen?
+    - Wann kann man in der Cafeteria essen?
+    - Was gibt es in der Mensa zu essen?
+    - Was kann ich heute in der Cafeteria essen?
+    - Gibt es eine Mensa auf dem Campus?
+    - Wo kann ich in der Hochschule Fulda essen?
+    - Was gibt es an der Hochschule zu esen?
+    - Gibt es nur die Mensa oder auch was anderes?
+
+# E-Learning
+- intent: e_learning
+  examples: |
+    - Wie komme ich zur E-Learning Seite meines Fachbereichs?
+    - Wo finde ich die E-Learning-Plattform?
+    - Wo ist die E-Learning Seite?
+    - Wo ist die digitale Lernplattform zu finden?
+    - Wie gelange ich zur E-Learning Seite von meinem Fachbereich?
+    - Wie melde ich mich für das E-Learning an?
+    - Was brauche ich um mich bei der E-Learning-Plattform anzumelden?
+    - Wie logge ich mich in die E-Learning-Plattform ein?
+
+# Bibliothek 
+- intent: library
+  examples: |
+    - Hat die Hochschule eine Bibliothek?
+    - Gibt es eine Bibliothek?
+    - Wo ist die Bib?
+    - Was sind die Öffnungszeiten der Bibliothek?
+    - Wann hat die Bib geöffnet?
+    - Kann ich immer in die Bibliothek?
+    - Wie kann ich einen Raum in der Bib reservieren?
+    - Kann man in der Bibliothek einen Raum reservieren?
+    - Hat die Bibliothek mehrere Standorte?
+    - Welche Bücher gibt es in der Bibliothek?
+    - Welche Bücher kann ich mir in der Bib ausleihen?
+
+# Öffnungszeiten 
+- intent: opening_hours
+  examples: |
+    - Wann hat die hochschule offen?
+    - Kann ich immer in die Gebäude der Hochschule?
+    - Wann kann ich welches Gebäude der Hochschule benutzen?
+    - Was sind die Öffnungszeiten der Hochschule?
+    - Hat die Hochschule auch während der vorlesungsfreien Zeit geöffnet?
+    - Hat die Hochschule auch während der Prüfungsphase geöffnet?
+    - Kann ich auch am Wochenende in die Hochschule? 
+    - Wo sind Informationen zu den Öffnungszeiten der Hochschule?
+
+# Ausweis 
+- intent: student_id
+  examples: |
+    - Wie bekomme ich meinen Studierendenausweis?
+    - Wo muss ich ein Foto für meinen Ausweis hochladen?
+    - Kann ich das Foto meines Ausweises ändern?
+    - Wird mir der Studierendenausweis zugeschickt?
+    - Wo muss ich meinen Ausweis abholen?
+
+# Bachelor-/Masterarbeit
+- intent: thesis
+  examples: |
+    - Wo kann ich meine Bachelorarbeit hochladen?
+    - Muss ich meine Bachelorarbeit online abgeben? 
+    - Wie muss ich meine Bachelorarbeit abgeben? 
+    - Soll die Bachelorarbeit nur online abgegeben werden? 
+    - Wie gibt man seine Bachelorarbeit ab? 
+    - Wo kann ich meine Masterarbeit hochladen?
+    - Muss ich meine Masterarbeit online abgeben?
+    - Wie muss ich meine Masterarbeit abgeben? 
+    - Soll die Masterarbeit nur online abgegeben werden? 
+    - Wie gibt man seine Masterarbeit ab? 
+
+# Sport 
+- intent: sports
+  examples: |
+    - Gibt es ein Sportprogramm an der Hochschule?
+    - Wo finde ich Informationen zum Hochschulsport?
+    - Welche Sportarten kann ich an der Hochschule machen? 
+    - Gibt es Sportkurse?
+    - Gibt es ein Sportprogramm oder Hochschulsportangebot?
+    - Wo kann ich Informationen zum Hochschulsport finden?
+    - Welche Sportmöglichkeiten stehen mir an der Hochschule zur Verfügung?
+    - Bietet die Hochschule Sportkurse oder -aktivitäten an?
+    - Wo erhalte ich eine Liste der verfügbaren Sportarten an der Hochschule?
+    - Kannst du mir mehr über die sportlichen Aktivitäten an der Hochschule erzählen?
+    - Wo finde ich den Zeitplan für Sportkurse und -veranstaltungen an der Hochschule?
+
+# Synonyme
+- synonym: Modul
+  examples: |
+    - Veranstaltung
+    - Kurs
+    - Seminar
+    - Vorlesung
+    - Übung
+
+- synonym: Module
+  examples: |
+    - Veranstaltungen
+    - Kurse
+    - Seminare
+    - Vorlesungen
+    - Übungen
+
+- synonym: einloggen
+  examples: |
+    - anmelden
+
+- synonym: ausloggen
+  examples: |
+    - abmelden
+    - verlassen
+
+- synonym: stundenplan
+  examples: |
+    - Übersicht belegter Module
+    - Zeitplan
+    - Terminplan
+    - Terminkalender
+    - Kalender
+
+- synonym: importieren
+  examples: |
+    - einführen
+    - einlesen
+    - zusammenführen
+    - übertragen
+    - hinzufügen
+    - integrieren
+
+- synonym: exportieren
+  examples: |
+    - herunterladen
+
+- synonym: Prüfungen
+  examples: |
+    - Klausuren
+    - Examen
+
+- synonym: anmelden
+  examples: |
+    - eintragen
+    - belegen
+    - einschreiben
+
+- synonym: abmelden
+  examples: |
+    - austragen
+    - austreten
+    - verlassen
+
+- synonym: einsehen
+  examples: |
+    - anschauen
+    - sehen
+    - finden
+
+- synonym: Credits
+  examples: |
+    - Punkte
+    - Bewertung
+    - Leistungspunkte
+    - Leistungen
+
+- synonym: Studiengebühren
+  examples: |
+    - Semesterbeitrag
+    - Zahlungen
+    - Gebühren
+    - Beitrag
+    - Kosten
+    - Studienbeitrag
+
+- synonym: Belege
+  examples: |
+    - Bescheide
+    - Bescheinigungen
+    - Studienbescheinigung
+    - Dokumente
+    - Nachweise
+    - Zeugnis
+
+- synonym: Mensa
+  examples: |
+    - Cafeteria
+    - Kantine
+    - Restaurant
+
+- synonym: Bibliothek
+  examples: |
+    - Bib
+    - Bücherei
+
+- synonym: Hochschule
+  examples: |
+    - hs
+    - Universität
+    - Uni
+    - University
+    - Fachhochschule
+
+- synonym: Studierendenausweis
+  examples: |
+    - Studentenausweis
+    - Ausweis
+    - Studi Ausweis
+    - Studienausweis
+    - student card
+    - Studierendenkarte
+    - Studentenkarte
+    - Ausweis für Studierende
+
+- synonym: Thesis
+  examples: |
+    - Bachelorarbeit
+    - Masterarbeit
+    - Abschlussarbeit
+
+- synonym: Hochschulsport
+  examples: |
+    - Sport
+    - Training
+    - Sportkurse
+    - Sportprogramm
+    - Sportmöglichkeiten
+    - Sportaktivitäten
+    - Sportarten
+    - Sportliche Aktivitäten
+    - Sportveranstaltungen
+
+- synonym: Studierende
+  examples: |
+    - Stundenten
+    - Studentinnen
+    - Student*innen
+    - Student:innen
+    - Studi
+    - Studis
